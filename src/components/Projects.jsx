@@ -117,7 +117,7 @@ const Projects = () => {
         </motion.div> */}
 
         {/* Projects Carousel */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-0 md:px-12 carousel-container">
           <AnimatePresence mode="wait">
             {filteredProjects.length > 0 && (
               <motion.div
@@ -126,22 +126,46 @@ const Projects = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden"
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.2}
+                onDragEnd={(event, info) => {
+                  if (info.offset.x > 100) {
+                    prevProject();
+                  } else if (info.offset.x < -100) {
+                    nextProject();
+                  }
+                }}
+                className="bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-md border border-gray-300 dark:border-gray-700 overflow-hidden cursor-grab active:cursor-grabbing md:cursor-default"
               >
-                <div className="grid md:grid-cols-2">
+                <div className="flex flex-col">
                   {/* Project Image */}
-                  <div className="h-64 md:h-96 bg-gray-200 dark:bg-gray-700 relative overflow-hidden group">
-                    <img
-                      src={filteredProjects[currentIndex].image}
-                      alt={filteredProjects[currentIndex].title}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="h-64 md:h-80 bg-gray-200 dark:bg-gray-700 relative overflow-hidden group">
+                    <a
+                      href={filteredProjects[currentIndex].liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img
+                        src={filteredProjects[currentIndex].image}
+                        alt={filteredProjects[currentIndex].title}
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="bg-gray-100/95 dark:bg-gray-800/90 backdrop-blur-sm px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600">
+                          <span className="text-gray-800 dark:text-gray-200 font-medium text-sm flex items-center gap-2">
+                            <ExternalLink className="w-4 h-4" />
+                            Ver Proyecto
+                          </span>
+                        </div>
+                      </div>
+                    </a>
                   </div>
 
                   {/* Project Info */}
-                  <div className="p-8">
-                    <h3 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">
+                  <div className="p-6">
+                    <h3 className="text-xl md:text-2xl font-bold mb-4 text-gray-800 dark:text-gray-200">
                       {filteredProjects[currentIndex].title}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -166,7 +190,7 @@ const Projects = () => {
                     </div>
 
                     {/* Links */}
-                    <div className="flex gap-4">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                       <a
                         href={filteredProjects[currentIndex].liveUrl}
                         target="_blank"
@@ -195,23 +219,33 @@ const Projects = () => {
           {/* Navigation Buttons */}
           {filteredProjects.length > 1 && (
             <>
+              {/* Desktop buttons - outside card */}
               <button
                 onClick={prevProject}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 md:-translate-x-16 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:scale-110 transition-transform"
+                className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 p-3 bg-primary-light dark:bg-primary-dark text-white rounded-full shadow-lg hover:scale-110 transition-transform z-10"
                 aria-label="Previous project"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                <ChevronLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextProject}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 md:translate-x-16 p-2 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:scale-110 transition-transform"
+                className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 p-3 bg-primary-light dark:bg-primary-dark text-white rounded-full shadow-lg hover:scale-110 transition-transform z-10"
                 aria-label="Next project"
               >
-                <ChevronRight className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+                <ChevronRight className="w-6 h-6" />
               </button>
             </>
           )}
         </div>
+
+        {/* Mobile swipe hint */}
+        {filteredProjects.length > 1 && (
+          <div className="md:hidden text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+            <span className="inline-flex items-center gap-1">
+              ← Desliza para navegar →
+            </span>
+          </div>
+        )}
 
         {/* Project Indicators */}
         {filteredProjects.length > 1 && (

@@ -5,10 +5,18 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply transition-colors duration-300;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 
   /* Custom scrollbar */
@@ -41,6 +49,31 @@
 
   .max-width-container {
     @apply max-w-7xl mx-auto;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Responsive images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure all elements stay within viewport */
+  * {
+    max-width: 100%;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 768px) {
+    .section-padding {
+      @apply px-3 sm:px-4;
+    }
+    
+    /* Prevent horizontal scroll on mobile */
+    body {
+      position: relative;
+    }
   }
 
   .glass-effect {
@@ -150,4 +183,47 @@ button {
 
 .span-flex{
   display: flex;
+}
+
+/* Mobile specific improvements */
+@media (max-width: 640px) {
+  /* Ensure buttons don't overflow */
+  .button-primary {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Improve text sizing on mobile */
+  h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  h2 {
+    font-size: 2rem !important;
+  }
+  
+  /* Ensure proper spacing */
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Fix carousel navigation on mobile */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Improve card visibility in light mode */
+  .project-card-light {
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .project-card-dark {
+    background: #1f2937;
+    border: 2px solid #374151;
+  }
 }

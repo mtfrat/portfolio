@@ -1,0 +1,148 @@
+export const translations = {
+  en: {
+    nav: {
+      home: 'Home',
+      about: 'About',
+      projects: 'Projects',
+      contact: 'Contact',
+    },
+    hero: {
+      greeting: 'Hi, I\'m',
+      role: 'Electronic Engineer & Web Developer',
+      subtitle: 'I create unique digital experiences with modern technologies',
+      cta: 'View my work',
+      download: 'Resume',
+    },
+    about: {
+      title: 'About Me',
+      subtitle: 'Passionate about creating innovative web solutions',
+      description: 'I\'m an Electronic Engineer with experience in embedded systems, IoT, and web development. I specialize in creating innovative solutions that combine hardware and software, from firmware development to modern web applications.',
+      skills: {
+        title: 'Skills',
+        frontend: 'Frontend Development',
+        firmware: 'Firmware & Embedded',
+        hardware: 'Hardware Design',
+        protocols: 'Communication Protocols',
+      },
+    },
+    projects: {
+      title: 'Featured Projects',
+      subtitle: 'Some of my recent work',
+      viewProject: 'View Project',
+      viewCode: 'View Code',
+      technologies: 'Technologies:',
+      all: 'All',
+      web: 'Web',
+      mobile: 'Mobile',
+      design: 'Design',
+      items: {
+        punatech: {
+          title: 'Puna Tech',
+          description: 'SPA website for an AI agent developer with a direct contact form to the user\'s email.',
+        },
+        taskmanagement: {
+          title: 'SPE Digital Services',
+          description: 'Interactive SPA website for a digital services provider with various contact methods and personal portfolio.',
+        },
+        lasboxer: {
+          title: 'Las Boxer',
+          description: 'Cabin website with image gallery and contact form.',
+        },
+      },
+    },
+    contact: {
+      title: 'Get In Touch',
+      subtitle: 'Let\'s work together on your next project',
+      email: 'Email',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
+      form: {
+        name: 'Name',
+        email: 'Email',
+        message: 'Message',
+        send: 'Send Message',
+        sending: 'Sending...',
+        success: 'Message sent successfully!',
+        error: 'Error sending message. Please try again.',
+      },
+    },
+    footer: {
+      rights: 'No rights reserved',
+      madeWith: 'Made with',
+      by: 'by',
+    },
+  },
+  es: {
+    nav: {
+      home: 'Inicio',
+      about: 'Sobre mí',
+      projects: 'Proyectos',
+      contact: 'Contacto',
+    },
+    hero: {
+      greeting: 'Hola, soy',
+      role: 'Ingeniero Electrónico & Desarrollador Web',
+      subtitle: 'Creo experiencias digitales únicas con tecnologías modernas',
+      cta: 'Ver mi trabajo',
+      download: 'Descargar CV',
+    },
+    about: {
+      title: 'Sobre Mí',
+      subtitle: 'Apasionado por crear soluciones web innovadoras',
+      description: 'Soy Ingeniero Electrónico con experiencia en sistemas embebidos, IoT y desarrollo web. Me especializo en crear soluciones innovadoras que combinan hardware y software, desde desarrollo de firmware hasta aplicaciones web modernas.',
+      skills: {
+        title: 'Habilidades',
+        frontend: 'Desarrollo Frontend',
+        firmware: 'Firmware y Embebidos',
+        hardware: 'Diseño de Hardware',
+        protocols: 'Protocolos de Comunicación',
+      },
+    },
+    projects: {
+      title: 'Proyectos Destacados',
+      subtitle: 'Algunos de mis trabajos recientes',
+      viewProject: 'Ver Proyecto',
+      viewCode: 'Ver Código',
+      technologies: 'Tecnologías:',
+      all: 'Todos',
+      web: 'Web',
+      mobile: 'Móvil',
+      design: 'Diseño',
+      items: {
+        punatech: {
+          title: 'Puna Tech',
+          description: 'Página SPA de desarrollador de agentes de inteligencia artificial con formulario de contacto directo al mail del usuario.',
+        },
+        taskmanagement: {
+          title: 'SPE Servicios Digitales',
+          description: 'Página SPA interactiva de proveedor de servicios digitales con diferentes medios de contacto y portfolio personal.',
+        },
+        lasboxer: {
+          title: 'Las Boxer',
+          description: 'Página web de cabañas con galería de imágenes y formulario de contacto.',
+        },
+      },
+    },
+    contact: {
+      title: 'Contacto',
+      subtitle: 'Trabajemos juntos en tu próximo proyecto',
+      email: 'Correo',
+      linkedin: 'LinkedIn',
+      github: 'GitHub',
+      form: {
+        name: 'Nombre',
+        email: 'Correo',
+        message: 'Mensaje',
+        send: 'Enviar Mensaje',
+        sending: 'Enviando...',
+        success: '¡Mensaje enviado con éxito!',
+        error: 'Error al enviar el mensaje. Por favor intenta de nuevo.',
+      },
+    },
+    footer: {
+      rights: 'Ningun derecho reservado',
+      madeWith: 'Hecho con',
+      by: 'por',
+    },
+  },
+};

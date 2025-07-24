@@ -1,0 +1,38 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad3c" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#374151;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1f2937;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="visor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Robot head -->
+  <rect x="14" y="18" width="36" height="28" rx="8" fill="url(#grad3c)" stroke="#4b5563" stroke-width="2"/>
+  
+  <!-- Visor -->
+  <rect x="18" y="26" width="28" height="8" rx="4" fill="url(#visor)" opacity="0.9"/>
+  <rect x="18" y="26" width="28" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+  
+  <!-- Scanner line -->
+  <line x1="20" y1="30" x2="44" y2="30" stroke="#fbbf24" stroke-width="1" opacity="0.8">
+    <animate attributeName="x1" values="20;44;20" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="22;46;22" dur="2s" repeatCount="indefinite"/>
+  </line>
+  
+  <!-- Robot antenna -->
+  <line x1="32" y1="18" x2="32" y2="10" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="10" r="2.5" fill="#ef4444"/>
+  <circle cx="32" cy="10" r="1" fill="#fbbf24"/>
+  
+  <!-- Robot mouth grid -->
+  <rect x="26" y="38" width="12" height="4" rx="1" fill="#6b7280"/>
+  <line x1="28" y1="38" x2="28" y2="42" stroke="#1f2937" stroke-width="0.5"/>
+  <line x1="30" y1="38" x2="30" y2="42" stroke="#1f2937" stroke-width="0.5"/>
+  <line x1="32" y1="38" x2="32" y2="42" stroke="#1f2937" stroke-width="0.5"/>
+  <line x1="34" y1="38" x2="34" y2="42" stroke="#1f2937" stroke-width="0.5"/>
+  <line x1="36" y1="38" x2="36" y2="42" stroke="#1f2937" stroke-width="0.5"/>
+</svg>

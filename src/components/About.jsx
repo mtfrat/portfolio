@@ -78,7 +78,7 @@ const About = () => {
               {t('about.description')}
             </p>
             <div className="flex flex-wrap gap-3">
-              {['React', 'Python', 'C', 'Git', 'Firebase', 'HTML/CSS', 'Tailwind'].map((tech) => (
+              {['React', 'Python', 'C', 'Git', 'Firebase', 'HTML & CSS', 'Tailwind', 'SQL', 'AWS', 'Docker','N8N'].map((tech) => (
                 <span
                   key={tech}
                   className="px-4 py-2 bg-primary-light/10 dark:bg-primary-dark/10 text-primary-light dark:text-primary-dark rounded-full text-sm font-medium"
